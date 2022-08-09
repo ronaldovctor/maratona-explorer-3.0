@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+    scroll-behavior: smooth;
+}
+
+$color-gray-1: #D1D7D5;
+$color-gray-2: #A3AEB2;
+$color-orange-1: #D9936A;
+$color-orange-2: #F8B48F;
+
+body {
+    background-size: cover;
+    background: linear-gradient(to right, rgba($color: $color-orange-1, $alpha: .3), white, white, rgba($color: $color-orange-1, $alpha: .3));
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    grid-template-columns: repeat(1, 200px 1fr 200px);
+    position: relative;
+
+    header {
+        font-family: 'Lobster', cursive;
+        grid-row-start: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .intro {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: inherit;
+            width: 100%;
+            height: 100px;
+            backdrop-filter: blur(5px);
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            box-shadow: 0px 10px 30px rgba($color: #000000, $alpha: .3);
+
+            h1 {
+                font-family: inherit;
+                font-size:4.6em;
+                transition: .4s;
+                letter-spacing: 3px;
+                cursor: pointer;
+    
+                span {
+                    font-family: inherit;
+                    color: $color-orange-1
+                }
+
+                &:hover{
+                    transform: scale(1.03);
+                    letter-spacing: 4px;
+                }
+            }
+
+            p {
+                position: absolute;
+                bottom: -32px;
+                background: $color-orange-1;
+                color: white;
+                font-weight: 600;
+                letter-spacing: 1px;
+                padding: 3px 8px;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                box-shadow: 0 5px 25px rgba($color: $color-orange-1, $alpha: .8);
+            }
+        }
+    }
+
+    section {
+        position: relative;
+        margin-top: 140px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        place-items: center;
+        flex-direction: column;
+        width: 600px;
+        max-height: fit-content;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0px 10px 30px rgba($color: #000000, $alpha: .3);
+
+        &:nth-child(even){
+            border-top-left-radius: 0px;
+        }
+        &:nth-child(odd){
+            border-top-right-radius: 0px;
+        }
+
+        .brunch-text, .drink-text {
+            position: absolute;
+            top: -34px;
+            text-align: center;
+            padding: 0px 20px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            background: $color-orange-1;
+            align-self: start;
+            box-shadow: 0 -5px 25px rgba($color: $color-orange-1, $alpha: .8);
+
+            h2 {
+                color: white;
+                font-weight: 500;
+                font-size: 1.4em;
+                letter-spacing: 3px;
+            }
+        }
+
+        .drink-text {
+            align-self: end;
+        }
+
+        .items {
+            list-style: none;
+
+            .item {
+
+                .item-detail {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    padding: 20px 0px;
+                    text-align: center;
+                    
+                    h3 {
+                        font-family: 'Lobster', cursive;
+                        color: $color-orange-1;
+                        padding: 0px 10px;
+                        font-size: 2.5em;
+                        letter-spacing: 2px;
+                    }
+    
+                    .text {
+                        position: relative;
+                        margin-top: 10px;
+                        color: black;
+                        width: 90%;
+                        border-radius: 10px;
+                        background-color: $color-orange-2;
+                        text-align: center;
+                        padding: 10px 20px;
+                        font-weight: 600;
+
+                        p:last-child {
+                            position: absolute;
+                            top: -55px;
+                            right: 0;
+                            background: black;
+                            border-radius: 10px;
+                            color: white;
+                            padding: 5px 15px;
+                            box-sizing: border-box;
+                            font-size: 1.4em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .bg {
+        position: absolute;
+        background: url('./imgs/coffee-bg.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        inset: 0;
+        z-index: -10;
+        filter: opacity(.2);
+    }
+
+    // Scroll
+    &::-webkit-scrollbar {
+        width: 10px;
+        background-color: rgba($color: $color-orange-1, $alpha: .7);
+
+        &:hover{
+            background-color: rgba($color: #fff, $alpha: .5);
+        }
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: white;
+        border-radius: 10px;
+        border: 2px solid $color-orange-1;
+
+        &:hover{
+            background-color: $color-orange-1;
+            border: 2px solid white;
+        }
+    }
+}
